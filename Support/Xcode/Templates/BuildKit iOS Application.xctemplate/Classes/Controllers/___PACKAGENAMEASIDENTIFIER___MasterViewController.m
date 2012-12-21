@@ -3,7 +3,21 @@
 
 @implementation ___PROJECTNAMEASIDENTIFIER___MasterViewController
 
-#pragma mark -
+#pragma mark - Memory
+
+-(void) didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+}
+
+-(void) viewDidUnload {
+
+}
+
+-(void) dealloc {
+	[super dealloc];
+}
+
+#pragma mark - Initializer
 
 -(id) init {
 	self = [super initWithStyle:UITableViewStyleGrouped];
@@ -12,7 +26,6 @@
 	}
 	return self;
 }
-
 
 #pragma mark UIViewController
 
@@ -74,21 +87,6 @@
 #pragma mark <UITableViewDelegate>
 
 -(void) tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-}
-
-
-#pragma mark Gozer
-
--(void) didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-}
-
--(void) viewDidUnload {
-
-}
-
--(void) dealloc {
-	[super dealloc];
 }
 
 @end

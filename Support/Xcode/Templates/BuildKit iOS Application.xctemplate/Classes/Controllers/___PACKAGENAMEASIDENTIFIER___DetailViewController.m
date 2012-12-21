@@ -3,7 +3,21 @@
 
 @implementation ___PROJECTNAMEASIDENTIFIER___DetailViewController
 
-#pragma mark Initializer
+#pragma mark - Memory
+
+-(void) didReceiveMemoryWarning {
+	[super didReceiveMemoryWarning];
+}
+
+-(void) viewDidUnload {
+	// You know the drill
+}
+
+-(void) dealloc {
+	[super dealloc];
+}
+
+#pragma mark - Initializer
 
 -(id) init {
 	self = [super initWithNibName:nil bundle:nil];
@@ -43,20 +57,6 @@
 
 -(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return TRUE;
-}
-
-#pragma mark Gozer
-
--(void) didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-}
-
--(void) viewDidUnload {
-	// You know the drill
-}
-
--(void) dealloc {
-	[super dealloc];
 }
 
 @end

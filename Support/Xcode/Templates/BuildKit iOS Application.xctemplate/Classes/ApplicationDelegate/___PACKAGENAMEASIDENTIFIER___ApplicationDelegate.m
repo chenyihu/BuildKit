@@ -7,6 +7,17 @@
 @synthesize window;
 @synthesize navigationController;
 
+#pragma mark Memory
+
+-(void) applicationDidReceiveMemoryWarning:(UIApplication *)application {
+	
+}
+
+-(void) dealloc {
+    self.navigationController = nil;
+    self.window = nil;
+	[super dealloc];
+}
 
 #pragma mark Shared Delegate
 
@@ -18,19 +29,19 @@
 #pragma mark <UIApplicationDelegate>
 
 -(BOOL) application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	self.window = [[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds] autorelease];
 	self.window.userInteractionEnabled = TRUE;
 	self.window.backgroundColor = [UIColor blackColor];
 	self.window.contentMode = UIViewContentModeScaleToFill;
 	self.window.autoresizesSubviews = TRUE;
 
     ___PACKAGENAMEASIDENTIFIER___MasterViewController *masterViewController = [[___PACKAGENAMEASIDENTIFIER___MasterViewController alloc] init];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
     self.window.rootViewController = self.navigationController;
     [masterViewController release];
 	[self.window makeKeyAndVisible];
 
-	return TRUE;
+	return YES;
 }
 
 -(void) applicationDidEnterBackground:(UIApplication *)application {
@@ -55,19 +66,6 @@
 
 -(BOOL) application:(UIApplication *)application openURL:(NSURL *)aURL sourceApplication:(NSString *)aSourceApplication annotation:(id)anAnnotation {
 	return TRUE;
-}
-
-
-#pragma mark Memory
-
--(void) applicationDidReceiveMemoryWarning:(UIApplication *)application {
-	
-}
-
--(void) dealloc {
-    self.navigationController = nil;
-    self.window = nil;
-	[super dealloc];
 }
 
 @end
